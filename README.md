@@ -2,6 +2,9 @@
 
 An AI-powered deep learning system to detect gastrointestinal (GI) bleeding from endoscopic images in real-time. This project leverages transfer learning (MobileNetV2) and a Gradio-powered interactive demo to classify images into Bleeding or Non-Bleeding, helping in faster medical diagnosis.
 
+Project Overview
+Gastrointestinal bleeding is a critical medical condition that requires rapid and accurate diagnosis. Endoscopic procedures, while effective, rely on the human eye to spot anomalies in a continuous video feed. This application leverages the power of computer vision to automate this process, providing a second, vigilant "eye" that can analyze the video stream in real time. By continuously scanning for visual markers of bleeding—such as specific color tones and textures—the system can serve as a proactive aid, potentially reducing diagnostic time and improving patient outcomes. This project serves as a proof-of-concept for a low-cost, effective, and accessible solution in medical diagnostics.
+
 📌 Features
 
 ✅ Real-time classification of GI bleeding from endoscopic images
