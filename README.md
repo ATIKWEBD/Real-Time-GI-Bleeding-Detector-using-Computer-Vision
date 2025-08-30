@@ -1,48 +1,117 @@
-Real-Time GI Bleeding Detector
-This project presents a real-time application for detecting gastrointestinal (GI) bleeding from a video stream using computer vision. It is built as a diagnostic tool to assist healthcare professionals by processing visual data and alerting them to potential bleeding events. The application demonstrates a powerful and practical use of computer vision technology in the medical field.
+🩸 Real-Time GI Bleeding Detector using Computer Vision
 
-Project Overview
-Gastrointestinal bleeding is a critical medical condition that requires rapid and accurate diagnosis. Endoscopic procedures, while effective, rely on the human eye to spot anomalies in a continuous video feed. This application leverages the power of computer vision to automate this process, providing a second, vigilant "eye" that can analyze the video stream in real time. By continuously scanning for visual markers of bleeding—such as specific color tones and textures—the system can serve as a proactive aid, potentially reducing diagnostic time and improving patient outcomes. This project serves as a proof-of-concept for a low-cost, effective, and accessible solution in medical diagnostics.
+An AI-powered deep learning system to detect gastrointestinal (GI) bleeding from endoscopic images in real-time. This project leverages transfer learning (MobileNetV2) and a Gradio-powered interactive demo to classify images into Bleeding or Non-Bleeding, helping in faster medical diagnosis.
 
-Features
-Real-Time Video Analysis: The application processes a live video stream frame by frame, performing instant analysis to detect signs of bleeding as they appear.
+📌 Features
 
-Computer Vision-Powered Detection: It uses robust computer vision algorithms to accurately identify visual indicators of GI bleeding, distinguishing them from other visual noise in the video feed.
+✅ Real-time classification of GI bleeding from endoscopic images
 
-Intuitive User Interface: The user interface, powered by Streamlit, provides a simple and clean dashboard where healthcare providers can upload or connect to a video source and monitor the detection process seamlessly.
+✅ Transfer learning using MobileNetV2 (pre-trained on ImageNet)
 
-Proof-of-Concept for Medical Aid: Designed to showcase how technology can be used as a valuable tool in a medical setting, enhancing diagnostic capabilities and supporting medical professionals.
+✅ Training + Inference pipeline in a single script
 
-Installation
-To get a copy of the project up and running on your local machine, follow these steps.
+✅ User-friendly Gradio web interface for predictions
 
-Clone the repository:
+✅ Support for GPU acceleration (CUDA)
 
-git clone [https://github.com/ATIKWEBD/Real-Time-GI-Bleeding-Detector-using-Computer-Vision.git](https://github.com/ATIKWEBD/Real-Time-GI-Bleeding-Detector-using-Computer-Vision.git)
+🛠 Tech Stack
+
+Python 3.8+
+
+PyTorch – Model training & inference
+
+Torchvision – Pre-trained models & transforms
+
+Gradio – Interactive web-based UI
+
+PIL – Image processing
+
+📂 Dataset Structure
+
+Place your dataset in the Image/ directory:
+
+Image/
+ ├── Bleeding/
+ │    ├── img1.jpg
+ │    ├── img2.jpg
+ │    └── ...
+ └── Non-Bleeding/
+      ├── img1.jpg
+      ├── img2.jpg
+      └── ...
+
+
+Each subfolder should contain relevant images for classification.
+
+⚙️ Installation
+# Clone the repository
+git clone https://github.com/ATIKWEBD/Real-Time-GI-Bleeding-Detector-using-Computer-Vision.git
 cd Real-Time-GI-Bleeding-Detector-using-Computer-Vision
 
-Create a virtual environment (recommended):
-
+# Create a virtual environment (recommended)
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate  # (Linux/Mac)
+venv\Scripts\activate     # (Windows)
 
-Install the required libraries:
-Create a requirements.txt file in your project directory with the following content:
-
-streamlit
-opencv-python
-Pillow
-
-Then, install the dependencies by running this command:
-
+# Install dependencies
 pip install -r requirements.txt
 
-Usage
-To run the application, simply execute the following command in your terminal:
 
-streamlit run app.py
+Example requirements.txt:
 
-This will launch the application in your web browser, allowing you to start the real-time detection process on your chosen video stream.
+torch
+torchvision
+gradio
+Pillow
 
-License
-This project is licensed under the MIT License.
+🚀 Usage
+
+Run the app directly:
+
+python app.py
+
+Steps:
+
+The script will train the model on your dataset (Image/ folder).
+
+After training, the Gradio interface will automatically launch.
+
+Open the provided link, upload an endoscopic image, and get predictions:
+
+Bleeding
+
+Non-Bleeding
+
+📊 Model Details
+
+Base model: MobileNetV2 (transfer learning)
+
+Optimizer: Adam
+
+Loss Function: CrossEntropyLoss
+
+Epochs: 5 (configurable)
+
+Batch Size: 32
+
+You can tweak these parameters inside app.py.
+
+📷 Demo (Example UI)
+
+When launched, the app provides an interface like this:
+
++------------------------------------------+
+| Upload Endoscopic Image [Choose File]    |
+|                                          |
+| [Prediction Result]                      |
+|   - Bleeding: 0.92                       |
+|   - Non-Bleeding: 0.08                   |
++------------------------------------------+
+
+🤝 Contributing
+
+Contributions are welcome! Please fork the repo and create a pull request with improvements.
+
+📜 License
+
+This project is licensed under the MIT License – feel free to use and modify it
