@@ -1,3 +1,4 @@
+<img width="1695" height="812" alt="image" src="https://github.com/user-attachments/assets/83db3c4d-9fb9-498f-abe1-e00d111d1a12" />
 🩸 Real-Time GI Bleeding Detector using Computer Vision
 
 An AI-powered deep learning system to detect gastrointestinal (GI) bleeding from endoscopic images in real-time. This project leverages transfer learning (MobileNetV2) and a Gradio-powered interactive demo to classify images into Bleeding or Non-Bleeding, helping in faster medical diagnosis.
